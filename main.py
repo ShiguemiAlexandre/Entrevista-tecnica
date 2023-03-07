@@ -41,6 +41,7 @@ class televisao:
             print("Canal incorreto")
 
     def aumentar_volume(self):
+        self.mudo = False
         if self.volume <= 100:
             self.volume += 1
             print("Volume aumentado para: ",  self.volume)
