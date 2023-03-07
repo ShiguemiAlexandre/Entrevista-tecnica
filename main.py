@@ -27,9 +27,9 @@ class televisao:
 
     def mudar_canal(self, direcao):
         if direcao == "para_frente":            
-            self.num_canal = (self.canais + 1) % len(self.canais)
+            self.num_canal = (self.num_canal + 1) % len(self.canais)
         elif direcao == "para_tras":
-            self.num_canal = (self.canais - 1) % len(self.canais)
+            self.num_canal = (self.num_canal - 1) % len(self.canais)
         print("O canal atual é: ", self.canais[self.num_canal])
 
     def mudar_canal_numero(self, numero):
@@ -41,21 +41,24 @@ class televisao:
             print("Canal incorreto")
 
     def aumentar_volume(self):
-        if self.aumentar_volume <= 100:
+        if self.volume <= 100:
             self.volume += 1
-            print("Volume:",  self.volume)
+            print("Volume aumentado para: ",  self.volume)
         else:
             print("Volume está no máximo!")
+
     def diminuir_volume(self):
-        if self.diminuir_volume > 0:
+        if self.volume > 0:
             self.volume -= 1
-            print("Volume:", self.volume)
+            print("Volume diminuido para:", self.volume)
+        else:
+            self.mudo = True
+
     def trocar_mudo(self):
-        if self.mudo == False:
-            print("Mudo está desabilidato")
+        self.mudo = not self.mudo
+        if self.mudo:
+            self.volume = 0
+            print("Mudo ativado")
         else:
-            print("Mudo está ativado")
-        if self.volume == 0:
-            print("Mudo está ativado")
-        else:
-            print("Volume: ", self.volume)
+            self.volume = 50
+            print("Mudo desativado")
