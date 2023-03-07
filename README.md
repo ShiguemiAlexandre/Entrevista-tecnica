@@ -1,4 +1,4 @@
-# Projec tPython
+# Project Python
 
 Este é um teste que explora 3 níveis de conhecimento que serão frequentemente exigidos durante as tarefas de testes.
 Desta forma, mesmo respostas incompletas serão consideradas durante a avaliação.
